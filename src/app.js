@@ -20,6 +20,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/socket.io', indexRouter);
 
 // DB Configuration: ToDo: Check if the DB will be used
 /* mongoose.connect(

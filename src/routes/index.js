@@ -6,6 +6,12 @@ const debug = require('debug')('chatting-bk:server');
 const FILE_PATH = './dev/big.file';
 
 /* GET Streaming File. */
+router.get('/', (req, res, next) => {
+   debug('>> Reading file');
+   res.send('Hello Socket.io');
+});
+
+/* GET Streaming File. */
 router.get('/big-file', (req, res, next) => {
    debug('>> Reading file');
    fs.readFile(FILE_PATH, (err, data) => {
