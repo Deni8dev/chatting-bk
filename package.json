@@ -2,7 +2,7 @@
   "name": "chatting-bk",
   "version": "0.0.1",
   "engines": {
-    "node": ">=10.15.1",
+    "node": ">=12.16.2",
     "npm": ">=6.14.4"
   },
   "private": true,
