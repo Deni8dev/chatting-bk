@@ -16,8 +16,9 @@ router.get('/big-file', (req, res, next) => {
    debug('>> Reading file');
    fs.readFile(FILE_PATH, (err, data) => {
       if (err)
-         throw err;
-      res.end(data);
+         res.end("No file found. Please Use POST request to write a file.\n Example: << curl POST http://localhost:3000/big-file >>");
+      else
+         res.end(data);
    });
 });
 
