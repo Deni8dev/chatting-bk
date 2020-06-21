@@ -1,0 +1,4 @@
+.dev/
+.ops/
+node_modules
+npm-debug.log

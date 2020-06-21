@@ -1,0 +1,27 @@
+version: '2'
+services:
+  chatting-bk:
+    build:
+      context: ./../
+      dockerfile: ./.ops/Dockerfile
+    container_name: chatting-bk
+    restart: always
+    ports:
+      - 3100:3100/tcp
+    depends_on:
+      - mongodb
+    links:
+      - mongodb
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    restart: always
+    command: mongod
+    volumes:
+      - ./.mongodb:/docker-entrypoint-initdb.d
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+      MONGO_INITDB_DATABASE: cht
