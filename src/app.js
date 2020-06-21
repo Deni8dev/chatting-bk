@@ -22,13 +22,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/socket.io', indexRouter);
 
-// DB Configuration: ToDo: Check if the DB will be used
-/* mongoose.connect(
-   'mongodb+srv://dac:dac@dac-mongodb-kg1jr.gcp.mongodb.net/crud?retryWrites=true',
-   { useNewUrlParser: true })
+// DB Configuration:
+mongoose
+   .connect('mongodb://mongodb:27017/cht?retryWrites=true', { useNewUrlParser: true })
    .then(() => console.log('>> Mongo DB connected...'))
    .catch(err => console.error(err));
-*/
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
