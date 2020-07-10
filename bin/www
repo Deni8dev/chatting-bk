@@ -17,6 +17,8 @@ app.set('port', port);
  * Create HTTP server.
  */
 const server = http.createServer(app);
+
+// ToDo: Move socketIO to better location.
 const socketIO = require('socket.io')(server);
 
 socketIO.on('connection', (socket) => {
